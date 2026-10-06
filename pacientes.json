@@ -1,0 +1,11 @@
+[
+    {
+        "nombre": "Manchas",
+        "tipo": "Perro",
+        "servicio": "Consulta general",
+        "fecha": "2026-10-06",
+        "hora": "18:20",
+        "costo": "500",
+        "foto": "perro1.jpg"
+    }
+]

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {{ paciente.nombre }} | Veterinaria
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+    <div>
+
+        <h1>
+             Veterinaria
+        </h1>
+
+        <span>
+            Ficha del paciente
+        </span>
+
+    </div>
+
+
+    <a
+        href="{{ url_for('index') }}"
+        class="logout"
+    >
+        ← Regresar
+    </a>
+
+</header>
+
+
+
+<main class="container">
+
+
+    <section class="patient-profile">
+
+
+        <div class="patient-photo">
+
+            {% if paciente.foto %}
+
+            <img
+                src="{{ url_for(
+                    'foto',
+                    nombre=paciente.foto
+                ) }}"
+                alt="{{ paciente.nombre }}"
+            >
+
+            {% else %}
+
+            <div class="no-photo">
+                
+            </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <div class="patient-information">
+
+            <p class="eyebrow">
+                PACIENTE
+            </p>
+
+            <h2>
+                {{ paciente.nombre }}
+            </h2>
+
+
+            <p>
+                <strong>
+                    Tipo de animal:
+                </strong>
+
+                {{ paciente.tipo }}
+            </p>
+
+
+            <p>
+                <strong>
+                    Servicio:
+                </strong>
+
+                {{ paciente.servicio }}
+            </p>
+
+
+            <p>
+                <strong>
+                    Fecha:
+                </strong>
+
+                {{ paciente.fecha }}
+            </p>
+
+
+            <p>
+                <strong>
+                    Hora:
+                </strong>
+
+                {{ paciente.hora }}
+            </p>
+
+
+            <p class="price">
+
+                Costo:
+                ${{ paciente.costo }}
+
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+</body>
+
+</html>
